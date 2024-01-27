@@ -13,19 +13,21 @@ public class Config {
 
     public static void addContato(String nome, String tel, String email){
         Config novoContato = new Config(nome, tel, email);
+        int posicaoLivre = 0;
 
-        for(int i = 0; i < contatos.length; i++){
-            if (contatos[i] == null){
-                contatos[i] = novoContato.toString();
-                System.out.println("\nContato adicionado com sucesso!");
-                System.out.println("\nContato adicionado: \n" + contatos[i]);
-                break;
-            }else{
+        for(int i = 0; i < contatos.length; i++) {
+            if (contatos[i] != null) {
+                posicaoLivre += (i + 1);
+            } /*else if (contatos[contatos.length] != null) {
                 System.err.println("Infelizmente seu espaço foi esgotado.");
                 System.exit(1);
-            }
+            }*/
         }
+        contatos[posicaoLivre] = novoContato.toString();
+        System.out.println("Contato adicionado com sucesso!");
+        System.out.println("\nContato adicionado: \n" + contatos[posicaoLivre]);
     }
+
 
     // Setters e getters
     public String getNome() {
