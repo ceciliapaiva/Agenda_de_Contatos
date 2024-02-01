@@ -11,16 +11,14 @@ public class ListaContatos {
     public ListaContatos() {}
 
     // Adicionar novo contato
-    public static ListaContatos addContato(ListaContatos pessoa){
-        int posicaoLivre = 0;
+    public static String addContato(ListaContatos pessoa){
         for(int i = 0; i < contatos.length; i++) {
             if (contatos[i] == null) {
                 contatos[i] = pessoa;
-                posicaoLivre = i;
+                return contatos[i].toString();
             }
         }
-        System.out.println("Contato adicionado com sucesso!");
-        return contatos[posicaoLivre];
+        return "Não há mais espaços!";
     }
 
     // Buscar contatos
@@ -39,7 +37,6 @@ public class ListaContatos {
     }
 
     //Getters e Setters
-
     public String getNome() {
         return nome;
     }
