@@ -31,12 +31,12 @@ public class Agenda {
                     String nomeBuscar = sc.nextLine();
                     sc.nextLine();
 
-                    ListaContatos resultado = buscar.buscarContatos(nomeBuscar);
+                    String resultado = buscar.buscarContatos(nomeBuscar);
 
                     if (resultado == null) {
                         System.err.println("Contato não encontrado.");
                     }else {
-                        System.out.println("Contato encontrado:\n" + resultado.toString());
+                        System.out.println("\nContato encontrado:\n" + resultado);
                     }
                     break;
                 case 3:

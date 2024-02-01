@@ -26,10 +26,10 @@ public class ListaContatos {
     }
 
     // Buscar contatos
-    public static ListaContatos buscarContatos(String nome) {
+    public static String buscarContatos(String nome) {
         for (ListaContatos contato : contatos) {
-            if (contato != null && contato.getNome().equals(nome)) {
-                return contato;
+            if (contato != null && contato.getNome().contains(nome)) {
+                return contato.toString();
             }
         }
         return null;
