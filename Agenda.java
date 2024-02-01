@@ -11,7 +11,7 @@ public class Agenda {
             opt = sc.nextInt();
             switch (opt){
                 case 1:
-                    //Adicionar Contato
+                    //Adiciona Contato
                     System.out.println("Nome: ");
                         nome = sc.nextLine();
                         nome = sc.nextLine();
@@ -25,13 +25,13 @@ public class Agenda {
                     System.out.println(adicionado.toString());
                     break;
                 case 2:
-                    //Buscar contato
-                    ListaContatos buscar = new ListaContatos();
-                    System.out.println("Pesquise pelo nome: ");
+                    //Busca contato
+                    //ListaContatos buscar = new ListaContatos();
+                    System.out.println("Buscar nome do contato: ");
                     String nomeBuscar = sc.nextLine();
                     sc.nextLine();
 
-                    String resultado = buscar.buscarContatos(nomeBuscar);
+                    String resultado = ListaContatos.buscarContatos(nomeBuscar);
 
                     if (resultado == null) {
                         System.err.println("Contato não encontrado.");

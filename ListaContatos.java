@@ -10,7 +10,7 @@ public class ListaContatos {
     }
     public ListaContatos() {}
 
-    // Adiciona novo contato
+    // Adicionar novo contato
     public static ListaContatos addContato(ListaContatos pessoa){
         int posicaoLivre = 0;
         for(int i = 0; i < contatos.length; i++) {
