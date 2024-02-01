@@ -26,12 +26,12 @@ public class Agenda {
                     break;
                 case 2:
                     //Busca contato
-                    //ListaContatos buscar = new ListaContatos();
                     System.out.println("Buscar nome do contato: ");
                     String nomeBuscar = sc.nextLine();
                     sc.nextLine();
 
-                    String resultado = ListaContatos.buscarContatos(nomeBuscar);
+                    ListaContatos buscar = new ListaContatos();
+                    String resultado = buscar.buscarContatos(nomeBuscar);
 
                     if (resultado == null) {
                         System.err.println("Contato não encontrado.");

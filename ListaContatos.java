@@ -14,13 +14,11 @@ public class ListaContatos {
     public static ListaContatos addContato(ListaContatos pessoa){
         int posicaoLivre = 0;
         for(int i = 0; i < contatos.length; i++) {
-            if (contatos[i] != null) {
-                posicaoLivre += (i + 1);
-            } else if (contatos[contatos.length - 1] != null) {
-                System.err.println("Infelizmente seu espaço foi esgotado.");
+            if (contatos[i] == null) {
+                contatos[i] = pessoa;
+                posicaoLivre = i;
             }
         }
-        contatos[posicaoLivre] = pessoa;
         System.out.println("Contato adicionado com sucesso!");
         return contatos[posicaoLivre];
     }
