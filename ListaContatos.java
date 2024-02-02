@@ -25,29 +25,34 @@ public class ListaContatos {
     // Verifica nome
     public static boolean verificaNome(String nome){
         char[] numeros = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
+        int tentativas = 0;
         for (int i = 0; i < nome.length(); i++){
             char letra = nome.charAt(i);
             for (int j = 0; j < numeros.length; j++) {
                 if (letra == numeros[j]) {
                     System.out.println("\nNão dígite números!\nTente novamente:\n");
+                    tentativas += 1;
                     return false;
                 }
             }
         }
-        System.out.println("Agora sim (❁´◡`❁)\n");
-        return true;
+
+            if (tentativas > 0){System.out.println("Agora sim (❁´◡`❁)\n");}
+            return true;
     }
 
     // Verifica Telefone
     public static boolean verificaTel(String tel){
+        int tentativas = 0;
         for (int i = 0; i < tel.length(); i++){
             char num = tel.charAt(i);
             if (!Character.isDigit(num)){
                 System.out.println("\nNão dígite caracteres!\nTente novamente:\n");
+                tentativas += 1;
                 return false;
             }
         }
-        System.out.println("Agora sim ƪ(˘⌣˘)ʃ\n");
+        if (tentativas > 0){System.out.println("Agora sim ƪ(˘⌣˘)ʃ\n");}
         return true;
     }
 
