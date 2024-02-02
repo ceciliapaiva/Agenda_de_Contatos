@@ -6,8 +6,8 @@ public class Agenda {
         int opt = 0;
         String nome = "", telefone = "", email = "";
 
-        while (opt != 3){
-            System.out.println("\nEscolha de acordo com os números:\n1. Adicionar novo contato\n2. Buscar contato\n3. Sair");
+        while (opt != 5){
+            System.out.println("\nEscolha de acordo com os números:\n1. Adicionar novo contato\n2. Buscar contato\n3. Imprimir lista de contatos\n4. Buscar contatos com determinada letra\n5. Sair");
             opt = sc.nextInt();
             sc.nextLine();
 
@@ -39,6 +39,7 @@ public class Agenda {
                     String adicionado = ListaContatos.addContato(pessoa);
                     System.out.println("\nContato salvo com sucesso!\n" + adicionado);
                     break;
+
                 case 2: //Busca contato
                     System.out.println("Busque o contato pelo nome que foi salvo: ");
                     String nomeBuscar = sc.nextLine();
@@ -52,9 +53,22 @@ public class Agenda {
                         System.out.println("Contato encontrado:\n" + resultado);
                     }
                     break;
-                case 3: //Finaliza
+
+                case 3: //Imprime lista de contatos
+                    ListaContatos.imprimirLista();
+                    break;
+
+                case 4: //Imprime contatos com primeira letra em comum
+                    System.out.print("Letra: ");
+                    String letra = sc.next();
+                    ListaContatos.letraContato(letra);
+                    break;
+
+                case 5: //Finaliza
+                    System.out.println("Até mais  o(*￣▽￣*)ブ");
                     System.exit(0);
                     break;
+
                 default:
                     System.err.println("Opção inválida!");
                     break;

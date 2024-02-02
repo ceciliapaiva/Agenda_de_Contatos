@@ -73,6 +73,39 @@ public class ListaContatos {
         return null;
     }
 
+    // Imprimi a lista completa
+    public static void imprimirLista(){
+        for (ListaContatos lista : contatos) {
+            if (lista != null) {
+                System.out.println(lista.toString());
+                System.out.println("_______________________________");
+            }
+        }
+    }
+
+    // Imprime contatos de acordo com a primeira letra
+    public static void letraContato(String nome){
+        char letra = nome.charAt(0);
+        char primeiraLetra = 0;
+        boolean encontrado = false;
+        letra = Character.toLowerCase(letra);
+        for (int i = 0; i < contatos.length; i++){
+            if (contatos[i] != null) {
+                primeiraLetra = contatos[i].getNome().charAt(0);
+                primeiraLetra = Character.toLowerCase(primeiraLetra);
+
+                if (letra == primeiraLetra) {
+                    System.out.println("\n" + contatos[i].toString());
+                    System.out.println("__________________________________");
+                    encontrado = true;
+                }
+            }
+        }
+        if (!encontrado) {
+            System.err.println("Não há nenhum contato que inicia com a letra " + nome);
+        }
+    }
+
     @Override
     public String toString() {
         return "Nome: " + nome + "\nTelefone: " + tel + "\nEmail: " + email;
