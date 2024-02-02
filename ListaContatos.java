@@ -2,12 +2,13 @@ public class ListaContatos {
     //Atributos
     String nome, tel, email;
     static ListaContatos[] contatos = new ListaContatos[50];
-    // Construtor
+    // Construtor com parametros
     public ListaContatos(String nome, String tel, String email) {
         setNome(nome);
         setTel(tel);
         setEmail(email);
     }
+    // Construtor sem parametros
     public ListaContatos() {}
 
     // Adicionar novo contato
@@ -19,6 +20,45 @@ public class ListaContatos {
             }
         }
         return "Não há mais espaços!";
+    }
+
+    // Verifica nome
+    public static boolean verificaNome(String nome){
+        char[] numeros = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
+        for (int i = 0; i < nome.length(); i++){
+            char letra = nome.charAt(i);
+            for (int j = 0; j < numeros.length; j++) {
+                if (letra == numeros[j]) {
+                    System.out.println("Não dígite números!\nTente novamente:");
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    // Verifica Telefone
+    public static boolean verificaTel(String tel){
+        for (int i = 0; i < tel.length(); i++){
+            char num = tel.charAt(i);
+            if (!Character.isDigit(num)){
+                System.out.println("Não dígite caracteres!\nTente novamente:");
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Verifica Email
+    public static boolean verificaEmail(String email){
+        for (int i = 0; i < email.length(); i++) {
+            char ch = email.charAt(i);
+            if (ch == '@'){
+                return true;
+            }
+        }
+        System.out.println("Lembre-se de inserir @ no seu email.\nTente novamente:");
+        return false;
     }
 
     // Buscar contatos
