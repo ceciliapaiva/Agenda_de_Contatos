@@ -29,11 +29,12 @@ public class ListaContatos {
             char letra = nome.charAt(i);
             for (int j = 0; j < numeros.length; j++) {
                 if (letra == numeros[j]) {
-                    System.out.println("Não dígite números!\nTente novamente:");
+                    System.out.println("\nNão dígite números!\nTente novamente:\n");
                     return false;
                 }
             }
         }
+        System.out.println("Agora sim (❁´◡`❁)\n");
         return true;
     }
 
@@ -42,10 +43,11 @@ public class ListaContatos {
         for (int i = 0; i < tel.length(); i++){
             char num = tel.charAt(i);
             if (!Character.isDigit(num)){
-                System.out.println("Não dígite caracteres!\nTente novamente:");
+                System.out.println("\nNão dígite caracteres!\nTente novamente:\n");
                 return false;
             }
         }
+        System.out.println("Agora sim ƪ(˘⌣˘)ʃ\n");
         return true;
     }
 
@@ -57,7 +59,7 @@ public class ListaContatos {
                 return true;
             }
         }
-        System.out.println("Lembre-se de inserir @ no seu email.\nTente novamente:");
+        System.out.println("\nLembre-se de inserir @ no seu email.\nTente novamente:\n");
         return false;
     }
 

@@ -39,8 +39,7 @@ public class Agenda {
                     String adicionado = ListaContatos.addContato(pessoa);
                     System.out.println("\nContato salvo com sucesso!\n" + adicionado);
                     break;
-                case 2:
-                    //Busca contato
+                case 2: //Busca contato
                     System.out.println("Busque o contato pelo nome que foi salvo: ");
                     String nomeBuscar = sc.nextLine();
 
@@ -53,8 +52,7 @@ public class Agenda {
                         System.out.println("Contato encontrado:\n" + resultado);
                     }
                     break;
-                case 3:
-                    //Finaliza
+                case 3: //Finaliza
                     System.exit(0);
                     break;
                 default:
